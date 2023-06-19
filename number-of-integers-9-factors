@@ -1,0 +1,32 @@
+Questions:Given a number n(1<=n<=109), the task is to find the total number of integers less than equal to n which have exactly 9 divisors.
+Examples:  
+Input_1: n = 100 
+Output_1: 2 
+The two numbers which have exactly 9 divisors are 36 and 100. 
+Input_2: n = 1000 
+Output_2: 8 
+The numbers are 36 100 196 225 256 441 484 676 
+
+PROGRAM: 
+#include <stdio.h>
+int main() {
+    int n;
+    int i,j;
+    printf("Enter the range upto which we are going to find: ");
+    scanf("%d",&n); 
+    
+    for(i=1;i<=n;i++)
+    {
+        int count=0;
+        for(j=1;j<=i;j++)
+        {
+                                //printf("j==%d\n",j);
+            if(i%j==0)
+                count++;
+        }
+                              //printf("i= %d   and count=%d \n ",i,count);
+        if(count==9)
+        printf("%d has exactly 9 factors\n",i);
+    }
+    return 0;
+}
