@@ -1,0 +1,41 @@
+QUESTION: Given an number(n), print two prime numbers whose sum will be equal to given number. There may be several combinations possible. Print only all possible such pair. 
+INPUT_1: 14
+OUTPUT_1: 
+3 + 11  is the summation that has both summation numbers as prime numbers. 
+7 + 7  is the summation that has both summation numbers as prime numbers. 
+
+INPUT_2: 3
+OUTPUT_2: There is no summation that as both numbers as prime.
+
+#include <stdio.h>
+int main() {
+    int n,i,j,count=0;
+    printf("Enter the number: ");
+    scanf("%d",&n);
+    
+    for(i=2;i<=n/2;i++)
+    {
+        int num1=i;
+        int num2=n-i;
+        int prime_count_num1=0;
+        int prime_count_num2=0;
+        for(j=2;j<num1;j++)             // staring with number=2 and ending with less than num1, so that factors is equal to 0 for prime numbers
+        {
+            if(num1%j==0)
+            prime_count_num1++;
+        }
+        for(j=2;j<num2;j++)
+        {
+            if(num2%j==0)
+            prime_count_num2++;
+        }
+        
+        if(prime_count_num1==0 && prime_count_num2==0){
+        printf("%d + %d  is the summation that has both summation numbers as prime numbers. \n",num1,num2);
+        count++;
+        }
+    }
+    if(count==0)
+    printf("There is no summation that as both numbers as prime");
+    return 0;
+}
