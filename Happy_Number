@@ -1,0 +1,35 @@
+OUTPUT:-
+Happy Number:
+1, 7, 10, 13, 19, 23, 28, 31, 32, 44, 49, 68, 70, 79, 82, 86, 91, 94, 97, 100,
+
+class Happy_Number {
+    public static void main(String[] args) {
+       int n;
+        System.out.println("Happy Number: ");
+        int sum=0,k=0,r,i;
+        for( i=1;i<=100;i++)
+        {
+            n=i;
+            sum=0;                             //note
+        while((n!=0 && sum!=1 &&  sum!=4)){                    // start of 1while
+            //System.out.println("n="+n);
+            sum=0;                            //note
+            k=0;
+            while(n!=0)
+            {
+                r=n%10;
+                sum+=r*r;
+                //System.out.println("sum="+sum);
+                n=n/10;
+            }
+            n=sum;
+            if(sum==1){
+            k=1;
+            break;
+            }
+         }                                                               // end of 1while
+        if(k==1)
+        System.out.print(i+" ,");
+        }                                       // end of for loop
+    }
+}
