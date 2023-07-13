@@ -1,0 +1,22 @@
+A number n is said to be Deficient Number if sum of all the divisors of the number denoted by divisorsSum(n) is less than twice the value of the number n.
+Input1: 21    (Divisors are 1, 3, 7 and 21. Sum of divisors is 32.
+This sum is less than 2*21 or 42.)
+Output1: 21 is a Deficient Number
+Input2: 12
+Output2: 12 is NOT a Deficient Number
+
+class Deficient_Number {
+    public static void main(String[] args) {
+        int n=17;        
+        int i,sum=0,mul=2*n;
+        
+        for(i=1;i<=n;i++)
+        if(n%i==0)
+        sum+=i;                
+                                      // end of for loop
+        if(mul>sum)
+        System.out.println(n+" is a Deficient Number");
+        else
+        System.out.println(n+ " is NOT a Deficient Number");
+    }
+}
