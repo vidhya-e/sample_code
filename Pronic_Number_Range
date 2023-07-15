@@ -1,0 +1,27 @@
+Output:
+Pronic Numbers from 1 to 1000:
+2  6  12  20  30  42  56  72  90  110  132  156  182  210  240  272  306  342  380  420  462  506  552  600  650  702  756  812  870  930  992  
+
+class Pronic_Number_Range {
+    public static void main(String[] args) {
+        int n;
+        int i,k=0,j;
+        System.out.println("Pronic Numbers from 1 to 1000: ");
+        for(j=1;j<=1000;j++)
+        {
+        n=j;
+        k=0;
+        for(i=1;i<=n;i++)
+        {
+             //System.out.println("N= "+n);
+            if(n%i==0 && n%(i+1)==0 && i*(i+1)==n){
+               // System.out.println(i+" and "+(i+1));
+            k=1;
+            break;
+            }
+        }
+        if(k==1)
+        System.out.print(n+"  ");
+        }
+    }
+}
