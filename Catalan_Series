@@ -1,0 +1,25 @@
+Catalan numbers are defined as a mathematical sequence that consists of positive integers.
+The nth term in the sequence denoted Cn, is found in the following formula: (2n)! / ( (n + 1)! * n! )               
+Output:
+Catalan Series:
+1 1 2 5 14 42 132 429 1430 4862 16796 
+
+class Catalan_Series {
+    public static void main(String[] args) {
+        System.out.println("Catalan Series: ");
+        long n,f,nu,de;                    // long beacuse the factorail of 2*n might be longer than what int can hold so
+        for(n=0;n<11;n++)
+        {
+            nu=fact(2*n);
+            de=fact(n+1)*fact(n);
+            f=(int)(nu/de);
+            System.out.println(f+"");
+        }
+    }
+    static long fact(long n)
+    {
+        if(n==1 || n==0)
+        return 1;
+        return n*fact(n-1);
+    }
+}
