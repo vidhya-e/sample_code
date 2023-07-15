@@ -1,0 +1,24 @@
+A number is called an automorphic number if and only if the square of the given number ends with the same number itself.
+Input: N = 76              (Explanation: As 76*76 = 5776   as last two digit is same as N.)
+Output : 76 is a  Automorphopic number
+
+class Automorphopic_Number {
+    public static void main(String[] args) {
+        int n=76,num=n;
+        int sqr=n*n;
+        int c=0,digit;
+        
+        while(num!=0)
+        {
+            c++;
+            num/=10;
+        }
+        //System.out.println("c= "+c);
+        digit=(int)(sqr%Math.pow(10,c));
+        //System.out.println("digit= "+digit);
+        if(digit==n)
+        System.out.println(n+ " is a  Automorphopic number");
+        else
+        System.out.println(n+ " is NOT a Automorphopic number");
+    }
+}
