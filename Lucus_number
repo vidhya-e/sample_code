@@ -1,0 +1,20 @@
+10 Lucus Number is: 76 
+class Lucus_number {
+    public static void main(String[] args) {
+        int n1=2,n2=1,s=0,i;
+        int n=10;
+        System.out.print(n+" Lucus Number is: ");
+        if(n==1)
+        System.out.print(n1+" ");
+        if(n==2)
+        System.out.print(n2+" ");
+        for(i=3;i<=100;i++)
+        {
+            s=n1+n2;
+            if(i==n)
+            System.out.print(s+" ");
+            n1=n2;
+            n2=s;
+        }
+    }
+}
