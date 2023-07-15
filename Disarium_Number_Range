@@ -1,0 +1,35 @@
+Output:
+Disarium Number from 1 to 10000: 
+1 2 3 4 5 6 7 8 9 89 135 175 518 598 1306 1676 2427 
+
+class Disarium_Number_Range {
+    public static void main(String[] args) {
+       int n,num;
+       int c=0,r,s=0,i;
+       System.out.println("Disarium Number from 1 to 10000: ");
+       for(i=1;i<=10000;i++)
+       {
+           n=i;
+           num=n;
+           c=0;
+           s=0;
+        while(n!=0)
+          {
+           c++;
+           n=n/10;
+          }
+        n=num;
+        //System.out.println("Count : "+c);
+        while(c!=0)
+          {
+           r=n%10;
+           s+=Math.pow(r,c);
+           //System.out.println(s+" ");
+           n/=10;
+           c--;
+          }
+       if(s==num)
+       System.out.print(num+ " ");
+      }
+    }
+}
