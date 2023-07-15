@@ -1,0 +1,18 @@
+Lucus_Series is similar to fibbonaci series
+Output:
+2 1 3 4 7 11 18 29 47 76 
+
+class Lucus_Series {
+    public static void main(String[] args) {
+        System.out.println("lucus Series: ");
+        int n1=2,n2=1,s=0,i;
+        System.out.print(n1+" "+n2+" ");         // printing the first two  number ie., 2 and 1 outside the loop
+        for(i=3;i<=10;i++)
+        {
+            s=n1+n2;
+            System.out.print(s+" ");
+            n1=n2;
+            n2=s;
+        }
+    }
+}
