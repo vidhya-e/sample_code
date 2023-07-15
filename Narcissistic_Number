@@ -1,0 +1,34 @@
+An Armstrong number, also called a narcissistic number.
+Input1:153         (153=1^3+5^3+3^3)
+Output1: 153 is Narcissistic Number
+
+Input2:1634         (1634=1^4+6^4+3^4+4^4)
+Output2: 1634 is Narcissistic Number
+
+class Narcissistic_Number {
+    public static void main(String[] args) {
+        int n=153;
+        int num=n;
+        int r,count=0,sum=0;
+        
+        while(n!=0)
+        {
+            r=n%10;
+            count++;                   // to count the number of digits
+            n=n/10;
+        }
+        //System.out.println("count"+count);
+        n=num;
+        while(n!=0)
+        {
+            r=n%10;
+            sum=sum+(int)Math.pow(r,count);                          // here we find the summation 
+            //System.out.println("sum: "+sum);
+            n=n/10;
+        }
+        if(sum==num)
+        System.out.println(num +" is Narcissistic Number");
+        else
+         System.out.println(num+"is NOT Narcissistic Number");
+     }
+}
