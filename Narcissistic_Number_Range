@@ -1,0 +1,36 @@
+Output:
+Narcissistic Number from 1 to 10000 are: 
+1 2 3 4 5 6 7 8 9 153 370 371 407 1634 8208 9474
+
+class Narcissistic_Number_Range {
+    public static void main(String[] args) {
+        int n,num;
+        int r,count=0,sum=0,i;
+        System.out.println("Narcissistic Number from 1 to 10000 are: ");
+        for(i=1;i<10000;i++)
+        {
+            n=i;
+            num=n;
+            count=0;
+            sum=0;
+
+            while(n!=0)
+          {
+            r=n%10;
+            count++;
+            n=n/10;
+          }
+        //System.out.println("count"+count);
+        n=num;
+        while(n!=0)
+        {
+            r=n%10;
+            sum=sum+(int)Math.pow(r,count);
+            //System.out.println("sum: "+sum);
+            n=n/10;
+        }
+        if(sum==num)
+        System.out.print(" "+num);
+        }
+      }
+}
