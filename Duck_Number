@@ -1,0 +1,28 @@
+A Duck number is a positive number which has zeroes present in it, For example 3210, 8050896, 70709 are all Duck numbers. Please note that a numbers with only 
+leading 0s is not considered as Duck Number. For example, numbers like 035 or 0012 are not considered as Duck Numbers. A number like 01203 is considered as Duck
+because there is a non-leading 0 present in it.
+
+Input : 707069     (Explanation: 707069 does not contains zeros at the beginning)
+Output : It is a duck number. 
+
+Input : 02364        (Explanation: in 02364 there is a zero at the beginning of the number)
+Output : It is not a duck number. 
+
+class Duck_Number {
+    public static void main(String[] args) {
+        String num="3800"; //we are getting the value in string because 038 numbers like this sometimes can't be stored in int as it is interpreted as octal number. 
+        int i,c=0;
+        
+       for(i=1;i<num.length();i++)
+        {
+           if(num.charAt(i)=='0')
+              c=1;
+        }
+        if(c==1)                                                          // it checks if 0 is present anywhere except the starting position
+            System.out.println(num +" is a Duck Number");
+        else if(num.charAt(0)=='0')                                       // it checks for leading 0
+            System.out.println(num+"NOT a Duck Number");
+        else                                                              // it checks if no 0 is present in the num
+            System.out.println(num+"is NOT a Duck Number");
+    }
+}
