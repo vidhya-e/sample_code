@@ -1,0 +1,51 @@
+A n digit number x is called Keith number if it appears in a special sequence (defined below) generated using its digits.
+Input : x = 197
+Output : 197 is a Keith Number
+( Because it that has first three terms as 1, 9, 7 and remaining terms evaluated using sum of previous 3 terms. 1, 9, 7, 17, 33, 57, 107, 197 )
+
+Input : x = 12
+Output : 12 is NOT a Keith Number
+( Because it doesn't appear in the special sequence generated using its digits. 1, 2, 3, 5, 8, 13, 21, .....  )
+
+class Keith_Number {
+    public static void main(String[] args) {
+        int n=12,num=n,sum=0,k=0,i;
+        int count=count(n);
+        int a[]=new int[count];
+        //System.out.println(a.length);
+        for(i=a.length-1;i>=0;i--)     // used to separte the num 197 to separte number and store it in array as 1,9,7.
+        {
+            a[i]=num%10;
+            num=num/10;
+        }
+        while(k==0)              
+        {
+            sum=0; 
+            for(i=0;i<a.length;i++)             // used to sum the elements in the array
+                sum+=a[i];
+            
+            if(sum==n)                            
+              k=1;                           // if sum==n k becomes 1 and it can exit from while loop
+            for(i=0;i<=count-2;i++)
+              a[i]=a[i+1];                    // it is used for storing first 2 elements in array as 9,7. count-2 otherwise it shows arrayOutOfBound Exception 
+            
+            a[i]=sum;                       // it is used to store the last element a[2]=sum=17;
+            if(sum>n)                     // if value becames greater than n then there is no use and we can exit from loop otherwise it becomes an infinite loop.
+              break;
+        }
+        if(k==1)
+        System.out.println(n+" is a Keith Number");
+        else
+        System.out.println(n+" is NOT a Keith Number");
+    }
+    static int count(int x)               // used to count the number of digits so we can assign a value to array.
+    {
+        int c=0;
+        while(x!=0)
+        {
+            c++;
+            x=x/10;
+        }
+        return c;
+    }
+}
