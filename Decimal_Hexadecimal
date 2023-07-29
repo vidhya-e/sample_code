@@ -1,0 +1,15 @@
+class Decimal_Hexadecimal {
+    public static void main(String[] args) {
+        System.out.println("Decimal To Hexadecimal conversion:  ");
+        int n=30,num=n,r;
+    String s="";
+    char a[]={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};       // add a char array for all elements
+    while(n!=0)
+    {
+        r=n%16; 
+        s=a[r]+s;          // include the character array and concat it with string
+        n=n/16;
+    }
+    System.out.printf("%d = %s ",num,s);
+    }
+}
