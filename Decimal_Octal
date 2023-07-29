@@ -1,0 +1,16 @@
+Output: 15=17  , 16=20
+
+class Decimal_Octal {
+    public static void main(String[] args) {
+        System.out.println("Decimal To Octal conversion:  ");
+        int n=16,num=n,r;
+    String s="";
+    while(n!=0)
+    {
+        r=n%8;
+        s=r+s;
+        n=n/8;
+    }
+    System.out.printf("%d = %s ",num,s);
+    }
+}
