@@ -1,0 +1,23 @@
+Output:
+Hexadecimal To Decimal: 
+23E= 574
+
+class Hexadecimal_Decimal {
+    public static void main(String[] args) {
+        System.out.println("Hexadecimal To Decimal: \n");
+        int i,sum=0,j=0,num=0,len;
+        String hex="0123456789ABCDEF";
+        String s="23e";
+        s=s.toUpperCase();  // since in hex string we have defined char in uppercase so
+        len=s.length();
+        
+        for(i=len-1;i>=0;i--)
+        {
+            char c=s.charAt(j);
+            num=hex.indexOf(c);                  // dont forget the indexOf function
+            sum=sum+(int)(num*Math.pow(16,i));
+            j++;
+        }
+        System.out.printf(" %s = %d ",s,sum);
+    }
+}
