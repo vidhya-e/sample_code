@@ -1,0 +1,20 @@
+Output:
+Octal To Decimal: 
+1071 = 569 
+
+class Octal_Decimal {
+    public static void main(String[] args) {
+        System.out.println("Octal To Decimal: \n");
+        int i,sum=0,j=0,num=0,len;
+        String s="1071";              // get the input in string instead of int as in int 0111 considers it as self octal number so.
+        len=s.length();
+        
+        for(i=len-1;i>=0;i--)
+        {
+            num=s.charAt(j)-'0';
+            sum=sum+(int)(num*Math.pow(8,i));             // it is 1*8^3+ 0*8^2 + 7*8^1 + 1*8^0
+            j++;
+       }
+        System.out.printf(" %s = %d ",s,sum);
+    }
+}
